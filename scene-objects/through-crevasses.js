@@ -1,4 +1,5 @@
 const throughCrevasses = {
+    travel: true,
     text: '',
     back() {
         sceneText.innerHTML = scene.text;

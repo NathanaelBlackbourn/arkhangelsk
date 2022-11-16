@@ -1,4 +1,5 @@
 const waitOutTheStorm = {
+    travel: true,
     text: '',
     back() {
         sceneText.innerHTML = scene.text;

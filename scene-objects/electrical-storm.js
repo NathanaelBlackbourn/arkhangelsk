@@ -1,4 +1,5 @@
 const electricalStorm = {
+    travel: true,
     text: '',
     back() {
         sceneText.innerHTML = scene.text;
