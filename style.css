@@ -46,6 +46,7 @@ h1 {
     left: 50%;
     transform: translate(-50%, -50%);
     width: 60%;
+    min-height: 400px;
     max-width: 600px;
 }
 
@@ -90,6 +91,7 @@ h1 {
 }
 
 #text-body {
+    flex: 1;
     padding-bottom: 1rem;
 }
 
