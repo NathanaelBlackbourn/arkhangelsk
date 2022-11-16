@@ -4,7 +4,9 @@ window.addEventListener('DOMContentLoaded', main);
 let day = 1;
 let temp = -20;
 let food = 10;
+let team = ['vasilieva', 'federov', 'semenov'];
 let injured = 0;
+let scene;
 
 const sceneText = document.getElementById('scene-text'); // Place in global scope in order to access from scene objects
 
@@ -14,10 +16,10 @@ function main() {
 }
 
 /**
- * Set the scene by calling relevant text and functions from scene object in separate file. 
- * @param {Object} scene 
+ * Set the scene by calling relevant text and functions from scene object in separate file.
  */
-function loadScene(scene) {
+function loadScene(newScene) {
+    scene = newScene;
     sceneText.innerHTML = scene.text;
     /** Prevent progression in time just for loading the intro */
     if (scene != intro) {
@@ -59,17 +61,14 @@ function stepFood() {
 
 /**
  * Add event listeners to command input field and help and inventory buttons.
- * @param {Object} scene 
  */
-function addEventListeners(scene) {
+function addEventListeners() {
     document.getElementById('help-button').addEventListener('click', toggleHelp);
     document.getElementById('inventory-button').addEventListener('click', toggleInventory);
     document.getElementById('close-help').addEventListener('click', toggleHelp);
     document.getElementById('close-inventory').addEventListener('click', toggleInventory);
     const executeButton = document.getElementById('execute-button');
-    executeButton.addEventListener('click', () => {
-        execute(scene); // Again sending arguments to callbacks, how can I avoid this without having variables in the global scope?
-    });
+    executeButton.addEventListener('click', execute);
     const input = document.getElementById('input');
     input.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
@@ -82,9 +81,8 @@ function addEventListeners(scene) {
 
 /**
  * Take value from input field, check if relevant method exists, call method. Otherwise display invalid command message.
- * @param {Object} scene 
  */
-function execute(scene) {
+function execute() {
     let input = document.getElementById('input');
     let command = camelize(input.value);
     if (scene.hasOwnProperty(command)) {
