@@ -64,6 +64,8 @@ function stepFood() {
 function addEventListeners(scene) {
     document.getElementById('help-button').addEventListener('click', toggleHelp);
     document.getElementById('inventory-button').addEventListener('click', toggleInventory);
+    document.getElementById('close-help').addEventListener('click', toggleHelp);
+    document.getElementById('close-inventory').addEventListener('click', toggleInventory);
     const executeButton = document.getElementById('execute-button');
     executeButton.addEventListener('click', () => {
         execute(scene); // Again sending arguments to callbacks, how can I avoid this without having variables in the global scope?

@@ -29,10 +29,15 @@
                 <input id="input" type="text" placeholder="Enter your course of action here">
                 <button id="execute-button">Execute</button>
             </div>
-            <div class="hidden" id="inventory-panel">
-                <h1>inventory:</h1><br>
-                <p id="inventory-text"></p><br>
-                <button id="close-inventory">close</button>
+            <div class="panel hidden" id="help-panel">
+                <h1>help</h1>
+                <p></p>
+                <button class="close-panel" id="close-help">close</button>
+            </div>
+            <div class="hidden panel" id="inventory-panel">
+                <h1>inventory</h1>
+                <ul id="inventory-list"></ul>
+                <button class="close-panel" id="close-inventory">close</button>
             </div>
         </div>
         <aside id="crew-container">

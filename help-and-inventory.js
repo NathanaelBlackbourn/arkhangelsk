@@ -1,31 +1,27 @@
  /** Event listener on help-button */
 function toggleHelp() {
-
+    const helpPanel = document.getElementById('help-panel');
+    helpPanel.classList.toggle('hidden');
  }
  
 
-let inventory = ['icepick', 'pilot 1'];
+let inventory = ['icepick'];
 
 function toggleInventory() {
-const inventoryPanel = document.getElementById('inventory-panel');
-const inventoryText = document.getElementById('inventory-text');
-if (inventoryPanel.classList.contains('hidden')){
-    if (inventory[0]) {
-        let inventoryList = inventory[0]
-        if (inventory.length >= 2) {
-            inventoryList + '<br>' + inventory[1]
+    const inventoryPanel = document.getElementById('inventory-panel');
+    if (inventoryPanel.classList.contains('hidden')){
+        createInventoryList();
         }
-        if (inventory[2]) {
-            inventoryList + '<br>' + inventory[2];
-        }
-        if (inventory[3]) {
-            inventoryList + '<br>' + inventory[3];
-        };
-        inventoryText.innerHTML = inventoryList;
-        } else {
-            inventoryText.innerHTML = 'Your inventory is empty';
-        }
-    }
     inventoryPanel.classList.toggle('hidden');
-    document.getElementById('close-inventory').addEventListener('click', toggleInventory);
  };
+
+function createInventoryList() {
+    const inventoryList = document.getElementById('inventory-list');
+    inventoryList.innerHTML = '';
+    for (let i = 0; i < inventory.length; i++) {
+        let listItem = document.createElement('li');
+        listItem.id = 'inventory-item-' + (i + 1);
+        listItem.innerHTML = inventory[i];
+        inventoryList.appendChild(listItem);
+    }
+ }
