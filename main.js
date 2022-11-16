@@ -32,7 +32,7 @@ function stepTemp() {
     const tempBox = document.getElementById('temp-box');
     temp = (temp - (injured * 2)) - 2;
     if (temp <= -50) {
-        loseGame();
+        freezeToDeath();
     } else {
     tempBox.innerText = temp + '°C';
     };
@@ -50,7 +50,7 @@ function stepFood() {
     const foodBox = document.getElementById('food-box');
     food = food - (1 + injured);
     if (food <= 0) {
-        loseGame();
+        starveToDeath();
     } else {
         foodBox.innerText = food + ' days of food';
     };
