@@ -18,7 +18,6 @@ function main() {
  */
 function loadScene(scene) {
     sceneText.innerHTML = scene.text;
-    console.log(scene.text);
     addExecuteListeners(scene);
     /** Prevent progression in time just for loading the intro */
     if (scene != intro) {
@@ -32,7 +31,11 @@ function loadScene(scene) {
 function stepTemp() {
     const tempBox = document.getElementById('temp-box');
     temp = (temp - (injured * 2)) - 2;
+    if (temp <= -50) {
+        loseGame();
+    } else {
     tempBox.innerText = temp + '°C';
+    };
 }
 
 /** Tick up day according to number injured */
@@ -46,7 +49,11 @@ function stepDay() {
 function stepFood() {
     const foodBox = document.getElementById('food-box');
     food = food - (1 + injured);
-    foodBox.innerText = food + ' days of food';
+    if (food <= 0) {
+        loseGame();
+    } else {
+        foodBox.innerText = food + ' days of food';
+    };
 }
 
 /**
@@ -58,13 +65,13 @@ function addExecuteListeners(scene) {
     executeButton.addEventListener('click', () => {
         execute(scene); // Again sending arguments to callbacks, how can I avoid this without having variables in the global scope?
     });
-    executeButton.addEventListener('keypress', () => {
-        if (key === enter) {
+    const input = document.getElementById('input');
+    input.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
             execute(scene);
         }
     })
 }
-
 
 /**
  * Take value from input field, check if relevant method exists, call method. Otherwise display invalid command message.
@@ -72,7 +79,7 @@ function addExecuteListeners(scene) {
  */
 function execute(scene) {
     let input = document.getElementById('input');
-    let command = input.value;
+    let command = camelize(input.value);
     console.log(command);
     if (scene.hasOwnProperty(command)) {
         scene[command]();
@@ -82,3 +89,16 @@ function execute(scene) {
     /** Clear input field */
     input.value = '';
 }
+
+
+/**
+ * Copied code from stack overflow. Translate string to camel case to match scene key.
+ * @param {string} str 
+ * @returns {string}
+ */
+function camelize(str) {
+    return str.replace(/(?:^\w|[A-Z]|\b\w|\s+)/g, function(match, index) {
+      if (+match === 0) return ""; // or if (/\s+/.test(match)) for white spaces
+      return index === 0 ? match.toLowerCase() : match.toUpperCase();
+    });
+  }
