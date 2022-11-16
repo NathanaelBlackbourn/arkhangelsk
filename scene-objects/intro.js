@@ -3,5 +3,8 @@ const intro = {
     weather() {
         const sceneText = document.getElementById('scene-text');
         sceneText.innerHTML = 'Hellow worldddddd'
+    },
+    enterTheCrater() {
+        loadScene(midCrater);
     }
 }
