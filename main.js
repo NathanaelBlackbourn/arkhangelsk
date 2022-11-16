@@ -4,8 +4,9 @@ window.addEventListener('DOMContentLoaded', main);
 let day = 1;
 let temp = -20;
 let food = 10;
+let injured = 0;
 
-const sceneText = document.getElementById('scene-text'); // Place i global scope in order to access from scene objects
+const sceneText = document.getElementById('scene-text'); // Place in global scope in order to access from scene objects
 
 /** Run the page, load the intro */
 function main() {
@@ -17,14 +18,16 @@ function main() {
  * @param {Object} scene 
  */
 function loadScene(scene) {
+    /** Clear input field */
+    input.value = '';
     sceneText.innerHTML = scene.text;
-    addExecuteListeners(scene);
     /** Prevent progression in time just for loading the intro */
     if (scene != intro) {
         stepDay();
         stepFood();
         stepTemp();
     }
+    addExecuteListeners(scene);
 }
 
 /** Tick down temperature according to number injured */
@@ -86,8 +89,6 @@ function execute(scene) {
     } else {
         // Show did not recognise command message
     }
-    /** Clear input field */
-    input.value = '';
 }
 
 

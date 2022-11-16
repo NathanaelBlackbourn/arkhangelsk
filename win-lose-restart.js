@@ -28,5 +28,3 @@ function restart() {
     commandBlock.innerHTML = commandHTML;
     loadScene(intro);
 }
-
-setTimeout(win, 1000);
