@@ -18,8 +18,6 @@ function main() {
  * @param {Object} scene 
  */
 function loadScene(scene) {
-    /** Clear input field */
-    input.value = '';
     sceneText.innerHTML = scene.text;
     /** Prevent progression in time just for loading the intro */
     if (scene != intro) {
@@ -27,7 +25,7 @@ function loadScene(scene) {
         stepFood();
         stepTemp();
     }
-    addExecuteListeners(scene);
+    addEventListeners(scene);
 }
 
 /** Tick down temperature according to number injured */
@@ -60,10 +58,12 @@ function stepFood() {
 }
 
 /**
- * Add event listeners to command input field, call execution function.
+ * Add event listeners to command input field and help and inventory buttons.
  * @param {Object} scene 
  */
-function addExecuteListeners(scene) {
+function addEventListeners(scene) {
+    document.getElementById('help-button').addEventListener('click', toggleHelp);
+    document.getElementById('inventory-button').addEventListener('click', toggleInventory);
     const executeButton = document.getElementById('execute-button');
     executeButton.addEventListener('click', () => {
         execute(scene); // Again sending arguments to callbacks, how can I avoid this without having variables in the global scope?
@@ -74,6 +74,8 @@ function addExecuteListeners(scene) {
             execute(scene);
         }
     })
+    /** Clear input field */
+    input.value = '';
 }
 
 /**
@@ -83,7 +85,6 @@ function addExecuteListeners(scene) {
 function execute(scene) {
     let input = document.getElementById('input');
     let command = camelize(input.value);
-    console.log(command);
     if (scene.hasOwnProperty(command)) {
         scene[command]();
     } else {

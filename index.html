@@ -29,6 +29,12 @@
                 <input id="input" type="text" placeholder="Enter your course of action here">
                 <button id="execute-button">Execute</button>
             </div>
+            <div class="hidden" id="inventory-panel">
+                <h1>inventory:</h1><br>
+                <p id="inventory-text"></p><br>
+                <button id="close-inventory">close</button>
+            </div>
+        </div>
         <aside id="crew-container">
             <div class="crew-icon" id="crew1">Vasilieva</div>
             <div class="crew-icon" id="crew2">Federov</div>
@@ -36,9 +42,18 @@
         </aside>
     </main>
     <script src="main.js"></script> <!-- Placed script here in order to get scene-text element at head of main.js -->
-    <script src="scene-objects/intro.js"></script>
-    <script src="scene-objects/mid-crater.js"></script>
-    <script src="scene-objects/electrical-storm.js"></script>
+    <script src="help-and-inventory.js"></script>
     <script src="win-lose-restart.js"></script>
+    <script src="scene-objects/intro.js"></script>
+    <script src="scene-objects/crater-epicentre.js"></script>
+    <script src="scene-objects/crevasses.js"></script>
+    <script src="scene-objects/electrical-storm.js"></script>
+    <script src="scene-objects/enter-the-storm.js"></script>
+    <script src="scene-objects/find-pilot-1.js"></script>
+    <script src="scene-objects/find-pilot-2.js"></script>
+    <script src="scene-objects/mid-crater.js"></script>
+    <script src="scene-objects/over-crevasses.js"></script>
+    <script src="scene-objects/through-crevasses.js"></script>
+    <script src="scene-objects/wait-out-the-storm.js"></script>
 </body>
 </html>

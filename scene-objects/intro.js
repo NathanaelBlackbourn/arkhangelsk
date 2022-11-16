@@ -6,5 +6,5 @@ const intro = {
     },
     enterTheCrater() {
         loadScene(midCrater);
-    }
+    },
 }
