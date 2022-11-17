@@ -10,6 +10,12 @@ let scene;
 
 const sceneText = document.getElementById('scene-text'); // Place in global scope in order to access from scene objects
 
+const global = {
+    back() {
+        sceneText.innerHTML = scene.text;
+    },
+}
+
 /** Run the page, load the intro */
 function main() {
     loadScene(intro);
@@ -87,6 +93,8 @@ function execute() {
     let command = camelize(input.value);
     if (scene.hasOwnProperty(command)) {
         scene[command]();
+    } else if (global.hasOwnProperty(command)) {
+        scene[command]();        
     } else {
         // Show did not recognise command message
     }
