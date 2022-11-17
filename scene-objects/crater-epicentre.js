@@ -12,6 +12,7 @@ const craterEpicentre = {
     /** Refill food rations to maximum */
     pickTheFruit() {
         food = 10;
+        showFood();
     },
     backToTheCrater() {
         loadScene(midCrater);

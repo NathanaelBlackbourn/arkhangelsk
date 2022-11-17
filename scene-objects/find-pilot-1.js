@@ -5,7 +5,7 @@ const findPilot1 = {
     kleistText:'',
     overgaardText:'',
     return() {
-        inventory.append('pilot1');
+        inventory.push('pilot1');
         loadScene(midCrater);
     }
 }

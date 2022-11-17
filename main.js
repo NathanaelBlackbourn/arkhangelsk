@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', main);
 let day = 1;
 let temp = -20;
 let food = 10;
-let team = ['vasilieva', 'federov', 'semenov'];
+let team = ['nielsen', 'kleist', 'overgaard']; // Maybe remove this array if not used
 let injured = 0;
 let scene;
 
@@ -22,7 +22,7 @@ function loadScene(newScene) {
     scene = newScene;
     sceneText.innerHTML = scene.text;
     /** Prevent progression in time just for loading the intro */
-    if (scene != intro) {
+    if (scene.travel) {
         stepDay();
         stepFood();
         stepTemp();
