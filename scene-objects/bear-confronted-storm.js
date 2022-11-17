@@ -1,6 +1,9 @@
 const bearConfrontedStorm = {
     travel: false,
     text: '',
+    nielsenText:'',
+    kleistText:'',
+    overgaardText:'',
     bringThem() {
         loadScene(findPilot1);
     },

@@ -7,12 +7,10 @@ function injury() {
     document.getElementById('injured-' + (injured+ leftBehind)).classList.toggle('hidden');
 }
 
+/** Removes a team memeber from the team array and on screen. Adds to the leftBehind variable to step the injury function base up one. */
 function leaveBehind() {
     document.getElementById('team-' + (injured + leftBehind)).classList.toggle('hidden');
     team.pop();
     injured = injured -1;
     leftBehind = leftBehind + 1;
 }
-
-injury();
-injury();
