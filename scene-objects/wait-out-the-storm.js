@@ -4,7 +4,7 @@ const waitOutTheStorm = {
     back() {
         sceneText.innerHTML = scene.text;
     },
-    vasilievThoughts:'',
-    federovThoughts:'',
-    semenovThoughts:'',
+    nielsenThoughts:'',
+    kleistThoughts:'',
+    overgaardThoughts:'',
 }

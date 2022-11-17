@@ -4,7 +4,7 @@ const findPilot1 = {
     back() {
         sceneText.innerHTML = scene.text;
     },
-    vasilievThoughts:'',
-    federovThoughts:'',
-    semenovThoughts:'',
+    nielsenThoughts:'',
+    kleistThoughts:'',
+    overgaardThoughts:'',
 }

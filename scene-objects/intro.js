@@ -8,9 +8,9 @@ const intro = {
         const sceneText = document.getElementById('scene-text');
         sceneText.innerHTML = 'Hellow worldddddd';
     },
-    vasilievThoughts:'',
-    federovThoughts:'',
-    semenovThoughts:'',
+    nielsenThoughts:'',
+    kleistThoughts:'',
+    overgaardThoughts:'',
     enterTheCrater() {
         loadScene(midCrater);
     },

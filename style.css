@@ -119,7 +119,9 @@ h1 {
 }
 
 ul {
+    margin-top: 2rem;
     list-style-type: none;
+    text-align: center;
 }
 
 .close-panel {
