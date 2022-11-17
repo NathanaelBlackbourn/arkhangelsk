@@ -1,4 +1,4 @@
-const waitOutTheStorm = {
+const waitTheStormOut = {
     travel: true,
     text: '',
     nielsenThoughts:'',

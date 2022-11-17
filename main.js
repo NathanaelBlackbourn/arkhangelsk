@@ -32,31 +32,46 @@ function loadScene(newScene) {
 
 /** Tick down temperature according to number injured */
 function stepTemp() {
-    const tempBox = document.getElementById('temp-box');
     temp = (temp - (injured * 2)) - 2;
     if (temp <= -50) {
         freezeToDeath();
     } else {
-    tempBox.innerText = temp + '°C';
+        showTemp();
     };
+}
+
+/** Display current temperature on screen */
+function showTemp() {
+    const tempBox = document.getElementById('temp-box');
+    tempBox.innerText = temp + '°C';
 }
 
 /** Tick up day according to number injured */
 function stepDay() {
-    const dayBox = document.getElementById('day-box');
     day = day + (1 + injured);
+    showDay();
+}
+
+/** Display current day on screen */
+function showDay() {
+    const dayBox = document.getElementById('day-box');
     dayBox.innerText = 'Day ' + day;
 }
 
 /** Tick down food according to number injured */
 function stepFood() {
-    const foodBox = document.getElementById('food-box');
     food = food - (1 + injured);
     if (food <= 0) {
         starveToDeath();
     } else {
-        foodBox.innerText = food + ' days of food';
+        showFood();
     };
+}
+
+/** Display current food on screen */
+function showFood() {
+    const foodBox = document.getElementById('food-box');
+    foodBox.innerText = food + ' days of food';
 }
 
 /**
