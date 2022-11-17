@@ -1,20 +1,18 @@
+let leftBehind = 0;
+
 /** Add to inured variable, show injury on screen */
 function injury() {
     injured = injured + 1;
-    document.getElementById('team-' + injured).classList.toggle('injured');
-    document.getElementById('injured-' + injured).classList.toggle('hidden');
+    document.getElementById('team-' + (injured+leftBehind)).classList.toggle('injured');
+    document.getElementById('injured-' + (injured+ leftBehind)).classList.toggle('hidden');
 }
 
 function leaveBehind() {
-    document.getElementById('team-' + injured).classList.toggle('hidden');
-    team.shift();
+    document.getElementById('team-' + (injured + leftBehind)).classList.toggle('hidden');
+    team.pop();
     injured = injured -1;
+    leftBehind = leftBehind + 1;
 }
 
-function heal() {
-    for (let i = 0; i < injured;) {
-        document.getElementById('team-' + injured).classList.toggle('injured');
-        document.getElementById('injured-' + injured).classList.toggle('hidden');
-        injured = injured - 1;
-    }
-}
+injury();
+injury();

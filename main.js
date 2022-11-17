@@ -10,12 +10,6 @@ let scene;
 
 const sceneText = document.getElementById('scene-text'); // Place in global scope in order to access from scene objects
 
-const global = {
-    back() {
-        sceneText.innerHTML = scene.text;
-    },
-}
-
 /** Run the page, load the intro */
 function main() {
     loadScene(intro);
@@ -81,8 +75,6 @@ function addEventListeners() {
             execute(scene);
         }
     })
-    /** Clear input field */
-    input.value = '';
 }
 
 /**
@@ -91,10 +83,15 @@ function addEventListeners() {
 function execute() {
     let input = document.getElementById('input');
     let command = camelize(input.value);
+    console.log(command);
     if (scene.hasOwnProperty(command)) {
         scene[command]();
+        /** Clear input field */
+        input.value = '';
     } else if (global.hasOwnProperty(command)) {
-        scene[command]();        
+        global[command]();
+        /** Clear input field */
+        input.value = '';        
     } else {
         // Show did not recognise command message
     }
