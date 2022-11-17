@@ -1,14 +1,14 @@
 const intro = {
     travel: false,
-    text: "Russia, Novaya Zemlya, 2045. Weapons testing has resumed on the island in the arctic circle. A test has resulted in an explosion fifty times that of expected. The northern tip of the island has become a crater. A deadzone where no technology, electronic or otherwise, functions. Electrical storms, however, rage and abnormal light patterns are witnessed in the crater from space. Something strange has happened. You and your team are sent in to investigate.<br><br>The <span>weather</span> is closing in and you don't have much time. Your <span>food</span> is also limited, if it runs out you will starve to death in the deadzone.<br><br>Words in yellow are keywords. Enter any of them in the command bow below and execute to either get more information or take actions.<br><br>You can consult your <span>team</span> at any time in the crater. Type their name followed by the keyword <span>thoughts</span>. Try it now to get acquianted with each of them.<br><br>Click 'help' at any time for the games basics.<br><br>When you are ready to begin type <span>enter the crater</span>.",
-    
+    text: "2045. Mining operations have been expanded into the arctic circle to supply the space travel corporations evacuating the wealthy from the planet.<br><br>An explosion equivalent to the detonation of ten nuclear bombs has occurred at such a facility in Gertrud Rask Land, northern Greenland. The area has become a crater. A deadzone where no technology, electronic or otherwise, functions. Electrical storms, however, rage and abnormal light patterns are witnessed in the crater from space. Something strange has happened. You and your team are sent in to investigate.<br><br>The <span>weather</span> is closing in and you don't have much time. Your <span>food</span> is also limited, if it runs out you will starve to death in the deadzone.<br><br>Words in yellow are keywords. Enter any of them in the command bow below and execute to either get more information or take actions.<br><br>You can consult your <span>team</span> at any time in the crater. Type their name followed by the keyword <span>thoughts</span>. Try it now to get acquianted with each of them.<br><br>Click help at any time for the games basics.<br><br>Type <span>back</span>at any time to return to the scene description.<br><br>When you are ready to begin type <span>enter the crater</span>.",
+    weatherText: "An abnormal weather system has formed over the crater generating temperatures far below usual levels. The temperature currently stands at -20°C but is dropping by the day. Be careful because if the temperature reaches -50°C your gear will no longer be able to protect you and you will most likely freeze to death.",
     weather() {
         const sceneText = document.getElementById('scene-text');
         sceneText.innerHTML = this.weatherText;
     },
-    nielsenThoughts:'',
-    kleistThoughts:'',
-    overgaardThoughts:'',
+    nielsenThoughts: "",
+    kleistThoughts: "",
+    overgaardThoughts: "",
     enterTheCrater() {
         loadScene(midCrater);
     },
