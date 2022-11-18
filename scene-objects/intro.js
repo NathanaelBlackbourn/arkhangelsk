@@ -8,11 +8,17 @@ const intro = {
     overgaardText: 'I’m Mette Overgaard. I’m the representative for Northern Metals Group, the company that owned the facility used to be about 50 kilometres north of here. I’m a geochemist and I’ll be taking my own measurements for the company.',
     weather() {
         sceneText.innerHTML = this.weatherText;
+        /** Clear input field */
+        // input.value = '';
     },
     food() {
         sceneText.innerHTML = this.foodText;
+        /** Clear input field */
+        // input.value = '';
     },
     enterTheCrater() {
         loadScene(midCrater);
+        /** Clear input field */
+        // input.value = '';
     },
 }

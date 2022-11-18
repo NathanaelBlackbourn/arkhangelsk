@@ -5,6 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <script src="main.js"></script>
+    <script src="help-and-inventory.js"></script>
+    <script src="injuries.js"></script>
+    <script src="win-lose-restart.js"></script>
+    <script src="scene-objects/intro.js"></script>
+    <script src="scene-objects/global.js"></script>
+    <script src="scene-objects/bear-confronted-storm.js"></script>
+    <script src="scene-objects/crater-epicentre.js"></script>
+    <script src="scene-objects/crevasses.js"></script>
+    <script src="scene-objects/electrical-storm.js"></script>
+    <script src="scene-objects/enter-the-storm.js"></script>
+    <script src="scene-objects/find-pilot-1.js"></script>
+    <script src="scene-objects/find-pilot-2.js"></script>
+    <script src="scene-objects/food-thrown-storm.js"></script>
+    <script src="scene-objects/mid-crater.js"></script>
+    <script src="scene-objects/over-crevasses.js"></script>
+    <script src="scene-objects/through-crevasses.js"></script>
+    <script src="scene-objects/wait-the-storm-out.js"></script>
     <title>THE CRATER</title>
 </head>
 <body>
@@ -34,10 +52,13 @@
                 <p></p>
                 <button class="close-panel" id="close-help">close</button>
             </div>
-            <div class="hidden panel" id="inventory-panel">
+            <div class="panel hidden" id="inventory-panel">
                 <h1>inventory</h1>
                 <ul id="inventory-list"></ul>
                 <button class="close-panel" id="close-inventory">close</button>
+            </div>
+            <div class="panel hidden" id="wrong-command">
+                <h1>Command not recognised.</h1>
             </div>
         </div>
         <aside id="team-container">
@@ -46,23 +67,5 @@
             <div class="team-icon" id="team-3">Overgaard<br><p class="injured-label hidden" id="injured-3">injured</p></div>
         </aside>
     </main>
-    <script src="main.js"></script> <!-- Placed script here in order to get scene-text element at head of main.js -->
-    <script src="help-and-inventory.js"></script>
-    <script src="injuries.js"></script>
-    <script src="win-lose-restart.js"></script>
-    <script src="scene-objects/intro.js"></script>
-    <script src="scene-objects/global.js"></script>
-    <script src="scene-objects/bear-confronted-storm.js"></script>
-    <script src="scene-objects/crater-epicentre.js"></script>
-    <script src="scene-objects/crevasses.js"></script>
-    <script src="scene-objects/electrical-storm.js"></script>
-    <script src="scene-objects/enter-the-storm.js"></script>
-    <script src="scene-objects/find-pilot-1.js"></script>
-    <script src="scene-objects/find-pilot-2.js"></script>
-    <script src="scene-objects/food-thrown-storm.js"></script>
-    <script src="scene-objects/mid-crater.js"></script>
-    <script src="scene-objects/over-crevasses.js"></script>
-    <script src="scene-objects/through-crevasses.js"></script>
-    <script src="scene-objects/wait-the-storm-out.js"></script>
 </body>
 </html>

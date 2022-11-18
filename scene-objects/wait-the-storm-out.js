@@ -10,7 +10,9 @@ const waitTheStormOut = {
     },
     confrontTheBear() {
         injury();
-        inventory.pop();
+        // if (inventory.contains('icepick')) {
+        //     inventory.pop();
+        //     };
         loadScene(bearConfrontedStorm);
     }
 }

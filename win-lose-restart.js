@@ -1,7 +1,19 @@
+window.addEventListener('DOMContentLoaded', addGameEndListeners)
+
 const restartButton = '<button id="restart">restart</button>';
 const commandHTML = '<input id="input" type="text" placeholder="Enter your course of action here"><button id="execute-button">Execute</button>'
-const infoBlock = document.getElementById('info-block');
-const commandBlock = document.getElementById('command-block');
+
+/** DOM element, global variable. Listener assigned on page load */
+let infoBlock;
+
+/** DOM element, global variable. Listener assigned on page load */
+let commandBlock;
+
+/** Assigning event listeners after page load */
+function addGameEndListeners() {
+    infoBlock = document.getElementById('info-block');
+    commandBlock = document.getElementById('command-block');
+}
 
 /** End the game when the temperature sinks below -50°C */
 function freezeToDeath() {
@@ -43,4 +55,5 @@ function restart() {
     showDay();
     food = 10;
     showFood();
+    craterEpicentre.heal();
 }

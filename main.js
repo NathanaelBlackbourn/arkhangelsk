@@ -8,10 +8,31 @@ let team = ['nielsen', 'kleist', 'overgaard']; // Maybe remove this array if not
 let injured = 0;
 let scene;
 let sceneText;
+let input;
 
 /** Run the page, load the intro */
 function main() {
     loadScene(intro);
+    addEventListeners();
+}
+
+
+/**
+ * Adds event listeners to command input field and help and inventory buttons.
+ */
+ function addEventListeners() {
+    document.getElementById('help-button').addEventListener('click', toggleHelp);
+    document.getElementById('inventory-button').addEventListener('click', toggleInventory);
+    document.getElementById('close-help').addEventListener('click', toggleHelp);
+    document.getElementById('close-inventory').addEventListener('click', toggleInventory);
+    const executeButton = document.getElementById('execute-button');
+    executeButton.addEventListener('click', execute);
+    input = document.getElementById('input');
+    input.addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            execute();
+        }
+    })
 }
 
 /**
@@ -21,16 +42,15 @@ function loadScene(newScene) {
     scene = newScene;
     sceneText = document.getElementById('scene-text');
     sceneText.innerHTML = scene.text;
-    /** Prevent progression in time just for loading the intro */
+    /** Progresses time if travel is true for scene objects */
     if (scene.travel) {
         stepDay();
         stepFood();
         stepTemp();
     }
-    addEventListeners(scene);
 }
 
-/** Tick down temperature according to number injured */
+/** Ticks down temperature according to number injured */
 function stepTemp() {
     temp = (temp - (injured * 2)) - 2;
     if (temp <= -50) {
@@ -40,25 +60,25 @@ function stepTemp() {
     };
 }
 
-/** Display current temperature on screen */
+/** Displays current temperature on screen */
 function showTemp() {
     const tempBox = document.getElementById('temp-box');
     tempBox.innerText = temp + '°C';
 }
 
-/** Tick up day according to number injured */
+/** Ticks up day according to number injured */
 function stepDay() {
     day = day + (1 + injured);
     showDay();
 }
 
-/** Display current day on screen */
+/** Displays current day on screen */
 function showDay() {
     const dayBox = document.getElementById('day-box');
     dayBox.innerText = 'Day ' + day;
 }
 
-/** Tick down food according to number injured */
+/** Ticks down food according to number injured */
 function stepFood() {
     food = food - (1 + injured);
     if (food <= 0) {
@@ -68,50 +88,28 @@ function stepFood() {
     };
 }
 
-/** Display current food on screen */
+/** Displays current food on screen */
 function showFood() {
     const foodBox = document.getElementById('food-box');
     foodBox.innerText = food + ' days of food';
 }
 
 /**
- * Add event listeners to command input field and help and inventory buttons.
- */
-function addEventListeners() {
-    document.getElementById('help-button').addEventListener('click', toggleHelp);
-    document.getElementById('inventory-button').addEventListener('click', toggleInventory);
-    document.getElementById('close-help').addEventListener('click', toggleHelp);
-    document.getElementById('close-inventory').addEventListener('click', toggleInventory);
-    const executeButton = document.getElementById('execute-button');
-    executeButton.addEventListener('click', execute);
-    const input = document.getElementById('input');
-    input.addEventListener('keypress', function(event) {
-        if (event.key === 'Enter') {
-            execute(scene);
-        }
-    })
-}
-
-/**
  * Take value from input field, check if relevant method exists, call method. Otherwise display invalid command message.
  */
 function execute() {
-    let input = document.getElementById('input');
     let command = camelize(input.value);
     console.log(command);
     if (scene.hasOwnProperty(command)) {
         scene[command]();
-        /** Clear input field */
-        input.value = '';
     } else if (global.hasOwnProperty(command)) {
-        global[command]();
-        /** Clear input field */
-        input.value = '';        
+        global[command]();     
     } else {
-        // Show did not recognise command message
+        wrongCommand();
     }
-}
-
+    /** Clear input field */
+    input.value = '';
+    }
 
 /**
  * Copied code from stack overflow. Translate string to camel case to match scene key.
@@ -124,3 +122,13 @@ function camelize(str) {
       return index === 0 ? match.toLowerCase() : match.toUpperCase();
     });
   }
+
+/** Displays 'Command not recognised' message to user. */
+function wrongCommand() {
+    let wrong = document.getElementById('wrong-command');
+    function toggleWrong() {
+        wrong.classList.toggle('hidden');
+    }
+    toggleWrong();
+    setTimeout(toggleWrong, 1000);
+}
