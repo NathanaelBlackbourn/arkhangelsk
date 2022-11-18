@@ -1,14 +1,16 @@
 const throughCrevasses = {
     travel: true,
-    text: 'A landscape of deep crevasses extends before you. Created by the explosion which form the crater as it clawed at the land. There are two ways to proceed. If you travel <span>over the crevasses</span> it will be easy to navigate but it’s dangerous. Thin sheets of ice and conceal crevasses resulting in disaster if you try to walk over them. If you choose to travel <span>through the crevasses</span> you avoid the risk of falling to your death but you could lose your way and you don’t know what might be taking shelter down there from the storm.',
+    text: 'A little faint blue light penetrates deep down into the cavernous cracks in the ice. You are spooked by occasional sounds coming from dark. Your compass however suggests you are heading in the right direction.<br><br>You turn a corner and are met by a terrifying sight, a sleeping polar before you, thin from malnutrition, starving, wakes and catches sight of you. In the split second you have to make up your mind, two ideas occur to you. You and your team can either try to <span>confront the bear</span>, it looks week and you might be able to scare it off. Otherwise you can <span>throw some food</span> to distract it long enough to make an escape. Your food is precious but so is your life.',
     nielsenThoughts:'',
     kleistThoughts:'',
     overgaardThoughts:'',
-    overTheCrevasses() {
+    confrontTheBear() {
         injury();
-        loadScene(overCrevasses);
+        loadScene(bearConfrontedCrevasses);
     },
-    throughTheCrevasses() {
-        loadScene(throughCrevasses);
+    throwSomeFood() {
+        food = food - 1;
+        showFood();
+        loadScene(foodThrownCrevasses);
     }
 }

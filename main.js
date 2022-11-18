@@ -81,7 +81,7 @@ function showDay() {
 /** Ticks down food according to number injured */
 function stepFood() {
     food = food - (1 + injured);
-    if (food <= 0) {
+    if (food < 0) {
         starveToDeath();
     } else {
         showFood();
