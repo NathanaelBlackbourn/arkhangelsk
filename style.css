@@ -124,6 +124,10 @@ ul {
     text-align: center;
 }
 
+#help-text {
+    margin-top: 20px;
+}
+
 .close-panel {
     position: absolute;
     bottom: 0.5rem;

@@ -1,5 +1,7 @@
 # THE CRATER
 
+https://nathanaelblackbourn.github.io/the-crater/
+
 JavaScript grundkurs.
 Laboration 1.
 Individuellt arbete.
