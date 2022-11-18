@@ -53,7 +53,7 @@ function loadScene(newScene) {
 /** Ticks down temperature according to number injured */
 function stepTemp() {
     temp = (temp - (injured * 2)) - 2;
-    if (temp <= -50) {
+    if (temp <= -55) {
         freezeToDeath();
     } else {
         showTemp();

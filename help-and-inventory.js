@@ -5,7 +5,7 @@ function toggleHelp() {
  }
  
 
-let inventory = ['icepick'];
+let inventory = [];
 
 function toggleInventory() {
     const inventoryPanel = document.getElementById('inventory-panel');

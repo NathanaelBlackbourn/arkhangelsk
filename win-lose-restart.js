@@ -9,15 +9,20 @@ let infoBlock;
 /** DOM element, global variable. Listener assigned on page load */
 let commandBlock;
 
+/** DOM element, global variable. Listener assigned on page load */
+let buttonBlock;
+
 /** Assigning event listeners after page load */
 function addGameEndListeners() {
     infoBlock = document.getElementById('info-block');
     commandBlock = document.getElementById('command-block');
+    buttonBlock = document.getElementById('button-block')
 }
 
 /** End the game when the temperature sinks below -50°C */
 function freezeToDeath() {
     infoBlock.classList.toggle('hidden');
+    buttonBlock.classList.toggle('hidden');
     sceneText.innerText = 'You ran out of time, the temperature reached -50°C and you and your team froze to death.';
     commandBlock.innerHTML = restartButton;
     addRestartListener();
@@ -26,6 +31,7 @@ function freezeToDeath() {
 /** End the game when the food reaches zero */
 function starveToDeath() {
     infoBlock.classList.toggle('hidden');
+    buttonBlock.classList.toggle('hidden');
     sceneText.innerText = 'You spent too long in the chaos of the crater. Your food ran out and you and your team starved to death.';
     commandBlock.innerHTML = restartButton;
     addRestartListener();
@@ -34,6 +40,7 @@ function starveToDeath() {
 /** Win the game by returning both pilots to the monolith */
 function win() {
     infoBlock.classList.toggle('hidden');
+    buttonBlock.classList.toggle('hidden');
     sceneText.innerText = 'You and your team stand back as the air around you illuminates and seems to ignite. You are incinerated by the blast from the launch of the monolith. Congratulations, you win.';
     commandBlock.innerHTML = restartButton;
     addRestartListener();
@@ -47,6 +54,7 @@ function addRestartListener() {
 /** Reset the game to starting coniditions and opening scene */
 function restart() {
     infoBlock.classList.toggle('hidden');
+    buttonBlock.classList.toggle('hidden');
     commandBlock.innerHTML = commandHTML;
     loadScene(intro);
     temp = -20;

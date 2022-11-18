@@ -5,6 +5,6 @@ const foodThrownCrevasses = {
     kleistText:'',
     overgaardText:'',
     continue() {
-        loadScene(findPilot1);
+        loadScene(findPilot2);
     }
 }

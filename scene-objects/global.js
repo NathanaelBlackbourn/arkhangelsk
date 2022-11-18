@@ -1,4 +1,4 @@
-/** This object contains methods common to all scenes */
+/** Contains methods common to all scenes */
 const global = {
     nielsenThoughts() {
         sceneText.innerHTML = scene.nielsenText;

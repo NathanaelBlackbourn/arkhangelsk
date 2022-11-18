@@ -100,7 +100,7 @@ h1 {
 
 /* Inventory/help buttons */
 
-#icon-container {
+#button-block {
     display: flex;
     justify-content: space-between;
 }
@@ -197,4 +197,11 @@ button:hover {
 
 .injured-label {
     color: var(--yellow);
+}
+
+
+/* Media queries */
+
+@media all and (max-width: 600px) {
+
 }

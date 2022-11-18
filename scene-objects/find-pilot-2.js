@@ -5,6 +5,7 @@ const findPilot2 = {
     kleistThoughts:'',
     overgaardThoughts:'',
     return() {
+        inventory.push('pilot 2');
         loadScene(midCrater);
     }
 }
