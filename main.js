@@ -7,8 +7,7 @@ let food = 10;
 let team = ['nielsen', 'kleist', 'overgaard']; // Maybe remove this array if not used
 let injured = 0;
 let scene;
-
-const sceneText = document.getElementById('scene-text'); // Place in global scope in order to access from scene objects
+let sceneText;
 
 /** Run the page, load the intro */
 function main() {
@@ -20,6 +19,7 @@ function main() {
  */
 function loadScene(newScene) {
     scene = newScene;
+    sceneText = document.getElementById('scene-text');
     sceneText.innerHTML = scene.text;
     /** Prevent progression in time just for loading the intro */
     if (scene.travel) {
