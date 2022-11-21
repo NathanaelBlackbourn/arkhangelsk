@@ -4,7 +4,10 @@ function toggleHelp() {
     helpPanel.classList.toggle('hidden');
  }
  
-/** This is where the 'pilots' are added to win the game */
+/**
+ * This is where the 'pilots' are added to win the game
+ * @type {Array}
+ */
 let inventory = [];
 
 /** Displays invenoty contents on screen */

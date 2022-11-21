@@ -1,4 +1,7 @@
-/** Scene object. Contains the scene's text and functionality. */
+/**
+ * Scene object. Contains the scene's text and functionality.
+ * @type {object}
+ */
 const findPilot1 = {
     travel: true,
     text: 'Ahead of you encased in ice is a perfect sphere, black as night. The sphere seems to emit a faint glow. You are drawn to it. You use your tools to extract it from the ice, as carefully as you can. The team is in agreement that you should remove it and <span>return</span> to the central crater.',

@@ -1,4 +1,7 @@
-/** Scene object. Contains the scene's text and functionality. */
+/**
+ * Scene object. Contains the scene's text and functionality.
+ * @type {object}
+ */
 const electricalStorm = {
     travel: true,
     text: 'You reach the edge of the storm. Bolts of lightning strike from the ground to the ceiling and back. The noise is deafening. You can either <span>risk the storm</span> and travel through or <span>wait the storm out</span> and see if it dies down. You feel an alien compulsion pulling you westwards.',

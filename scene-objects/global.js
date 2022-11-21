@@ -1,4 +1,7 @@
-/** Contains methods common to all scenes */
+/**
+ * Scene object. Contains the scene's text and functionality.
+ * @type {object}
+ */
 const global = {
     /** Team members only groan if asked thoughts while injured */
     injuredGroan: '*groans*',
