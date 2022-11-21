@@ -40,11 +40,11 @@ The game is won by collected two items and taking them to the game's central sce
 
 -----
 
-'The Crater' är att textbaserat äventyr spel. Det spelas genom att skriva kommandon i inmatningsfält. Varje scene beskrivs i text på skärmen och möjliga kommandon komuniceras till spelarn i texten. Man kan både vinna och förlora spelet.
+'The Crater' är ett textbaserat äventyr spel. Det spelas genom att skriva kommandon i inmatningsfält. Varje scene beskrivs i text på skärmen och möjliga kommandon kommuniceras till spelaren i texten. Man kan både vinna och förlora spelet.
 
 Vid varje ny scene avancerar tid framåt en speldag.
 
-Nummret drag spelaren kan göra är begränsad som temperaturen stiger ner med varje ny dag, so snart den når minus femtio-fem grader förlorar spelaren.
+Numret drag spelaren kan göra är begränsad som temperaturen stiger ner med varje ny dag, så snart den når minus femtio-fem grader förlorar spelaren.
 
 Mat är också en begränsad resurs för spelaren vilken stiger ner varje speldag. Mat, dock, kan fyllas på vid en scene i spelet.
 
