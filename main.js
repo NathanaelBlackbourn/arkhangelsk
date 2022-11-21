@@ -13,23 +13,28 @@ let input;
 /** Run the page, load the intro */
 function main() {
     loadScene(intro);
-    addEventListeners();
+    addButtonListeners();
+    addCommandListeners();
 }
 
 
-/** Adds event listeners to command input field and help and inventory buttons. */
- function addEventListeners() {
+/** Adds event listeners to help and inventory buttons. */
+ function addButtonListeners() {
     document.getElementById('help-button').addEventListener('click', toggleHelp);
     document.getElementById('inventory-button').addEventListener('click', toggleInventory);
     document.getElementById('close-help').addEventListener('click', toggleHelp);
-    document.getElementById('close-inventory').addEventListener('click', toggleInventory);
+    document.getElementById('close-inventory').addEventListener('click', toggleInventory);    
+}
+
+/** Adds listener to command input */
+function addCommandListeners() {
     const executeButton = document.getElementById('execute-button');
     executeButton.addEventListener('click', execute);
     input = document.getElementById('input');
     input.addEventListener('keypress', function(event) {
         if (event.key === 'Enter') {
             execute();
-        }
+        };
     })
 }
 

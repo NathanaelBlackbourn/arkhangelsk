@@ -14,3 +14,19 @@ function leaveBehind() {
     injured = injured -1;
     leftBehind = leftBehind + 1;
 }
+
+/** Removes all injuries on screen and in system  */
+function healTeam () {
+    for (let i = 0; i < injured;) {
+        document.getElementById('team-' + (injured + leftBehind)).classList.toggle('injured');
+        document.getElementById('injured-' + (injured + leftBehind)).classList.toggle('hidden');
+        injured = injured - 1;
+    }
+}
+
+function resurrectTeam() {
+    for (let i = 0; i < leftBehind;) {
+        document.getElementById('team-' + (injured + leftBehind)).classList.toggle('hidden');
+        leftBehind = leftBehind - 1;
+    }
+}

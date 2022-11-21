@@ -4,7 +4,7 @@ window.addEventListener('DOMContentLoaded', addGameEndListeners)
 const restartButton = '<button id="restart">restart</button>';
 
 /** HTML for command box to replace upon restart */
-const commandHTML = '<input id="input" type="text" placeholder="Enter your course of action here"><button id="execute-button">Execute</button>'
+const commandHTML = '<input id="input" type="text" placeholder="Enter your course of action here"><button id="execute-button">execute</button>'
 
 /** DOM element, global variable. Listener assigned on page load */
 let infoBlock;
@@ -60,11 +60,19 @@ function restart() {
     buttonBlock.classList.toggle('hidden');
     commandBlock.innerHTML = commandHTML;
     loadScene(intro);
+    addCommandListeners();
+    inventory = [],
     temp = -20;
     showTemp();
     day = 1;
     showDay();
     food = 10;
     showFood();
-    craterEpicentre.heal();
+    resetTeam();
+}
+
+/** Restores teams health and returns any teammates left behind */
+function resetTeam() {
+    healTeam();
+    resurrectTeam();
 }

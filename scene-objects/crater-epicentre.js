@@ -13,11 +13,7 @@ const craterEpicentre = {
     },
     /** Removes all injuries in the team and from screen */
     heal() {
-        for (let i = 0; i < injured;) {
-            document.getElementById('team-' + (injured + leftBehind)).classList.toggle('injured');
-            document.getElementById('injured-' + (injured + leftBehind)).classList.toggle('hidden');
-            injured = injured - 1;
-        }
+        healTeam()
     },
     /** Refills food rations to maximum */
     pickTheFruit() {
