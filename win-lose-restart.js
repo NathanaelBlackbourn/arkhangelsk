@@ -41,7 +41,7 @@ function addGameEndListeners() {
 function freezeToDeath() {
     infoBlock.classList.toggle('hidden');
     buttonBlock.classList.toggle('hidden');
-    sceneText.innerText = 'You ran out of time, the temperature reached -50°C and you and your team froze to death.';
+    sceneText.innerText = 'You ran out of time, the temperature reached -55°C and you and your team froze to death.';
     commandBlock.innerHTML = restartButton;
     addRestartListener();
 }
