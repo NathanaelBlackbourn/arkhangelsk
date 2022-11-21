@@ -6,18 +6,18 @@ JavaScript grundkurs.
 Laboration 1.
 Individuellt arbete.
 
-JavaScript basics course
-Exercise 1
-Individual task
+JavaScript basics course.
+Exercise 1.
+Individual task.
 
-* Brief *
+*Brief*
 'I den här laborationen skall du skapa en textbaserad interaktiv upplevelse där användaren kan göra förändringar i en värld.'
 
 'In this exercise you will created a text-based interactive experience where the user can make changes in a world.'
 
 
 # Solution
-* Plot *
+*Plot*
 2045, Gertrud Rask Land, Greenland.
 
 A huge explosion occurs at a mining operation within the arctic circle. The cause of the explosion is unknown. The player and their team of three scientists are sent to investigate.
@@ -27,19 +27,31 @@ A huge explosion occurs at a mining operation within the arctic circle. The caus
 En stor explosion händer på gruvingsoperation inom polcirkeln. Anledningen för explosionen är oklar. Spelaren och sitt team får uppdrag att investigera.
 
 
-* Gameplay *
+*Gameplay*
 The Crater is a text-based adventure game. It is played by entering predetermined commands into a text field. Each scene is described in a text box on the screen and available commands are communicated to the player in the text. The game is both winnable and losable. 
 
-The number of moves the player can make is limited as the temperture ticks down with each move and as soon as it hits minimum at fifty the player loses.
+With each new scene time progresses one game day.
+
+The number of moves the player can make is limited as the temperture ticks down with each new day and as soon as it hits the floor at minus fifty-five the player loses.
 
 Food is also a limited resource for the player which ticks down each game day. Food, however, can be restored at one scene in the game.
+
+The game is won by collected two items and taking them to the game's central scene.
 
 -----
 
 'The Crater' är att textbaserat äventyr spel. Det spelas genom att skriva kommandon i inmatningsfält. Varje scene beskrivs i text på skärmen och möjliga kommandon komuniceras till spelarn i texten. Man kan både vinna och förlora spelet.
 
+Vid varje ny scene avancerar tid framåt en speldag.
 
-* Avgränsningar/limitations *
+Nummret drag spelaren kan göra är begränsad som temperaturen stiger ner med varje ny dag, so snart den når minus femtio-fem grader förlorar spelaren.
+
+Mat är också en begränsad resurs för spelaren vilken stiger ner varje speldag. Mat, dock, kan fyllas på vid en scene i spelet.
+
+Spelet vinnas genom at hämta två objekt och ta med dem till spelets centrala scene.
+
+
+*Avgränsningar/limitations*
 Should I be able to continue with this project indefinitely there are a lot of ideas and fixes that I would like to implement but have been needed to consciously rule out. Realising them is well within my ability but the time it would take would carry me past the hand-in deadline. They include:
 
 - Conditional compilation of text for each scene. I would put together each scene's text according to which parts of the game have already been explored by the player. Options players have of directions explore should also be conditional according to where they have been.
