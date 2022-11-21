@@ -17,9 +17,7 @@ function main() {
 }
 
 
-/**
- * Adds event listeners to command input field and help and inventory buttons.
- */
+/** Adds event listeners to command input field and help and inventory buttons. */
  function addEventListeners() {
     document.getElementById('help-button').addEventListener('click', toggleHelp);
     document.getElementById('inventory-button').addEventListener('click', toggleInventory);

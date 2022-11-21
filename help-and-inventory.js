@@ -4,9 +4,10 @@ function toggleHelp() {
     helpPanel.classList.toggle('hidden');
  }
  
-
+/** This is where the 'pilots' are added to win the game */
 let inventory = [];
 
+/** Displays invenoty contents on screen */
 function toggleInventory() {
     const inventoryPanel = document.getElementById('inventory-panel');
     if (inventoryPanel.classList.contains('hidden')){
@@ -15,6 +16,7 @@ function toggleInventory() {
     inventoryPanel.classList.toggle('hidden');
  };
 
+/** Resets then creates the list of inventory objects in the DOM */
 function createInventoryList() {
     const inventoryList = document.getElementById('inventory-list');
     inventoryList.innerHTML = '';

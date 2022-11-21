@@ -1,6 +1,9 @@
 window.addEventListener('DOMContentLoaded', addGameEndListeners)
 
+/** HTML for restart button on winning and losing panels */
 const restartButton = '<button id="restart">restart</button>';
+
+/** HTML for command box to replace upon restart */
 const commandHTML = '<input id="input" type="text" placeholder="Enter your course of action here"><button id="execute-button">Execute</button>'
 
 /** DOM element, global variable. Listener assigned on page load */
