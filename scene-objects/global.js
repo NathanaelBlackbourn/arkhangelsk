@@ -36,6 +36,6 @@ const global = {
     },
     /** Displays scene base text */
     back() {
-        sceneText.innerHTML = scene.text;
+        scene.showText();
     },
 }

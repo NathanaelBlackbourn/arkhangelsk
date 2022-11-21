@@ -202,10 +202,3 @@ button:hover {
 .injured-label {
     color: var(--yellow);
 }
-
-
-/* Media queries */
-
-@media all and (max-width: 600px) {
-
-}

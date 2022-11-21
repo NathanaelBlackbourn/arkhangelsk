@@ -5,6 +5,9 @@ const waitTheStormOut = {
     nielsenText:'You have no time to talk with your teammates. You must act now.',
     kleistText:'You have no time to talk with your teammates. You must act now.',
     overgaardText:'You have no time to talk with your teammates. You must act now.',
+    showText() {
+        sceneText.innerHTML = this.text;
+    },
     throwSomeFood() {
         food = food - 1;
         showFood();

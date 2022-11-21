@@ -1,16 +1,36 @@
 window.addEventListener('DOMContentLoaded', main);
 
-/** Set starting conditions */
+/** Tracks number of days in the crater */
 let day = 1;
+
+/** Tracks temperature */
 let temp = -20;
+
+/** Tracks remaining food */
 let food = 10;
-let team = ['nielsen', 'kleist', 'overgaard']; // Maybe remove this array if not used
+
+/** Tracks injured team members */
 let injured = 0;
+
+/** Tracks team members left behind */
+let leftBehind = 0;
+
+/** Scene objects are assigned to this variable then method and properties are called from it */
 let scene;
+
+/** The DOM object 'scene-text' is assigned to this variable on load */
 let sceneText;
+
+/** The DOM object 'input' is assigned to this variable on load */
 let input;
 
-/** Run the page, load the intro */
+/** Tracks whether the player has completed the storm wing */
+let stormCompleted = false;
+
+/** Tracks whether the player has completed the crevasses wing */
+let crevassesCompleted = false;
+
+/** Runs the page, loads the intro */
 function main() {
     loadScene(intro);
     addButtonListeners();
@@ -26,7 +46,7 @@ function main() {
     document.getElementById('close-inventory').addEventListener('click', toggleInventory);    
 }
 
-/** Adds listener to command input */
+/** Adds listeners to command input */
 function addCommandListeners() {
     const executeButton = document.getElementById('execute-button');
     executeButton.addEventListener('click', execute);
@@ -38,13 +58,11 @@ function addCommandListeners() {
     })
 }
 
-/**
- * Set the scene by calling relevant text and functions from scene object in separate file.
- */
+/** Sets the scene by calling relevant text and functions from scene object in separate file. */
 function loadScene(newScene) {
     scene = newScene;
     sceneText = document.getElementById('scene-text');
-    sceneText.innerHTML = scene.text;
+    scene.showText();
     /** Progresses time if travel is true for scene objects */
     if (scene.travel) {
         stepDay();
@@ -65,6 +83,10 @@ function stepTemp() {
 
 /** Displays current temperature on screen */
 function showTemp() {
+    /**
+     * The div where current temperature is shown
+     * @type {HTMLDivElement}
+     */
     const tempBox = document.getElementById('temp-box');
     tempBox.innerText = temp + '°C';
 }
@@ -77,6 +99,10 @@ function stepDay() {
 
 /** Displays current day on screen */
 function showDay() {
+    /**
+     * The div where current day is show
+     * @type {HTMLDivElement}
+     */
     const dayBox = document.getElementById('day-box');
     dayBox.innerText = 'Day ' + day;
 }
@@ -93,16 +119,17 @@ function stepFood() {
 
 /** Displays current food on screen */
 function showFood() {
+    /**
+     * The div where remaining food is shown
+     * @type {HTMLDivElement}
+     */
     const foodBox = document.getElementById('food-box');
     foodBox.innerText = food + ' days of food';
 }
 
-/**
- * Take value from input field, check if relevant method exists, call method. Otherwise display invalid command message.
- */
+/** Takes value from input field, check if relevant method exists, call method. Otherwise display invalid command message. */
 function execute() {
     let command = camelize(input.value);
-    console.log(command);
     if (scene.hasOwnProperty(command)) {
         scene[command]();
     } else if (global.hasOwnProperty(command)) {

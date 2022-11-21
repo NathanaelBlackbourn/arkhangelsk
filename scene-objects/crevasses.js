@@ -5,6 +5,9 @@ const crevasses = {
     nielsenText:'If there are any bears remaining in this area they’re probably sheltering down there. As much as we want to check for survivors, we also want to survive ourselves. Let’s go over.',
     kleistText:'A friend of mine based at Station Nord, he fell down a crevasse last winter. He can’t feel his legs any more. He lost his job, his partner, he couldn’t even keep his dog. If you decided to then I’ll follow you over but know the danger you’re putting us all in.',
     overgaardText:'Well if both ways are dangerous then let’s take the fastest route. Food is running out every day we’re here.',
+    showText() {
+        sceneText.innerHTML = this.text;
+    },
     overTheCrevasses() {
         injury();
         loadScene(overCrevasses);

@@ -8,6 +8,9 @@ const intro = {
     nielsenText: 'Pipaluk Nielsen is my name. I’m qualified as a conservation biologist but my job these days amounts to observing the local ecosystem’s decline. It’s not my first mining related ecological disaster but this one seems unique. I’m here to see if we can achieve some kind of damage limitation.',
     kleistText: 'Nice to meet you, I’m Rasmus Kleist. I’m a meteorologist. The readings from the disaster have been unprecedented. I brought all the instruments I could carry to try and make some sense of it. All of them that don’t require electricity.',
     overgaardText: 'I’m Mette Overgaard. I’m the representative for Northern Metals Group, the company that owned the facility used to be about 50 kilometres north of here. I’m a geochemist and I’ll be taking my own measurements for the company.',
+    showText() {
+        sceneText.innerHTML = this.text;
+    },
     food() {
         sceneText.innerHTML = this.foodText;
     },

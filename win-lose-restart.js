@@ -69,6 +69,8 @@ function restart() {
     food = 10;
     showFood();
     resetTeam();
+    stormCompleted = false;
+    crevassesCompleted = false;
 }
 
 /** Restores teams health and returns any teammates left behind */

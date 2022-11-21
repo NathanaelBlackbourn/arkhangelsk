@@ -5,8 +5,13 @@ const findPilot2 = {
     nielsenText:'I read about something like this in inuit mythology. We must learn how it is keeping that tree alive.',
     kleistText:'If there are more of these things in this crater, we need to find them. We need to… go to the centre.',
     overgaardText:'When we leave this hell you will all sign non-disclosure agreements. This is property of the company. We must keep it safe.',
+    showText() {
+        sceneText.innerHTML = this.text;
+    },
+    /** Adds pilot to inventory and marks game wing completed. Returns to crossroads. */
     return() {
         inventory.push('pilot 2');
+        crevassesCompleted = true;
         loadScene(midCrater);
     }
 }

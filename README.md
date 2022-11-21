@@ -54,7 +54,7 @@ Spelet vinnas genom at hämta två objekt och ta med dem till spelets centrala s
 *Avgränsningar/limitations*
 Should I continue with this project indefinitely there are a lot of ideas and fixes that I would like to implement but have been needed to consciously rule out. Realising them is well within my ability but the time it would take would carry me past the hand-in deadline. They include:
 
-- Conditional compilation of text for each scene. I would put together each scene's text according to which parts of the game have already been explored by the player, the actions available to them should also be dynamic.
+- Conditional compilation of text for each scene. I would put together each scene's text according to which parts of the game have already been explored by the player, the actions available to them should also be dynamic. I have partly implemented this in the 'midCrater' scene but it should be rolled out throughout the project.
 - More in depth writing. The joy of a text based game lies in the richness of the descriptions and the creativity expressed in the world building. I wanted to create time to focus on code so I have kept writing short and in most cases just used the first draft. For bear scene outcomes some text is duplicated.
 - An element of chance to the game at injury scenes. Probably a 50% chance of injury, the following scene would then be decided according to whether an injury had occured.
 - A more developed inventory element in gameplay. I would like the team to enter the crater with a number of piece of equipment that can help or be lost at various scenes. For example, an icepick that give bonuses when fighting a bear or breaking the pilot out of the ice block and can be lost during a bear fight.
@@ -65,7 +65,7 @@ Should I continue with this project indefinitely there are a lot of ideas and fi
 
 Om jag skulle fortsätta med projektet obegränsat är det många idéer och justeringar jag skulle implementera men just för den här inlämningen fick jag gränsa av. Jag är kapabel av at realisera dem men tiden det hade tagit skulle passera tidsgränsen. De inkulderar:
 
-- Texten ska kompileras enligt relevanta villkor för varje scene. Innehållet ska förändras beroende på vilka delar av spelet spelaren har kompletterat. Tillgängliga kommandon ska också bero på detta.
+- Texten ska kompileras enligt relevanta villkor för varje scene. Innehållet ska förändras beroende på vilka delar av spelet spelaren har kompletterat. Tillgängliga kommandon ska också bero på detta. Jag har implementerat en del av detta på 'midCrater' scenen men det ska också vara med igenom resten av spelet.
 - Mer utvecklad skrivande. Text baserad spel kräver bra texter för engagemang. Jag ville skapa tid för att fokusera på koden så jag har hållit mig till korta texter och har oftast kört med den första versionen utan ändringar. Vissa björn scener har dupilcerad text.
 - Slump vid skadningsscener, förmodligen 50%. Scenen som följer skulle bero på resultatet.
 - Djupare inventorielistan funktionalitet. Teamet ska börja med et flertal objekt utrustning som kan hjälpa och förloras vid vissa scener. Till exempel en ishacka som ger bonus när spelaren konfronterar björnen eller bryter ut piloten från isblocket men också förloras under björn-konfrontationen.

@@ -5,6 +5,9 @@ const craterEpicentre = {
     nielsenText: 'This thing, it’s incredible. I really feel like we should do what it says. You heard it too, right? Look at this bubble it has created here in the depths of the frozen landscape.',
     kleistText: 'We should record everything we can, this could be first contact. Should we do what it says? Of course we should! Pick the fruit while we’re here, we can stay is this crater as long as we need!',
     overgaardText: 'Incredible. It’s inexplicable. It’s profoundly… These ‘pilots’, it’s essential that we return them back to this… structure.',
+    showText() {
+        sceneText.innerHTML = this.text;
+    },
     /** Checks inventory for both pilots, invokes win function */
     insertThePilots() {
         if (inventory.includes('pilot 1') && inventory.includes('pilot 2')) {
