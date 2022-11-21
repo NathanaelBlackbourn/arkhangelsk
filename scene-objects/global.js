@@ -1,6 +1,8 @@
 /** Contains methods common to all scenes */
 const global = {
+    /** Team members only groan if asked thoughts while injured */
     injuredGroan: '*groans*',
+    /** Checks if team member is injured or left behind when asked for thoughts. Displays correct text. */
     nielsenThoughts() {
         console.log(injured);
         console.log(leftBehind);
@@ -12,6 +14,7 @@ const global = {
             sceneText.innerHTML = scene.nielsenText;
         }
     },
+    /** Checks if team member is injured or left behind when asked for thoughts. Displays correct text. */
     kleistThoughts() {
         if (injured >= 1 && leftBehind === 1) {
             sceneText.innerHTML = this.injuredGroan;
@@ -21,6 +24,7 @@ const global = {
             sceneText.innerHTML = scene.kleistText;
         }
     },
+    /** Checks if team member is injured or left behind when asked for thoughts. Displays correct text. */
     overgaardThoughts() {
         if (injured >= 1 && leftBehind === 2) {
             sceneText.innerHTML = this.injuredGroan;
@@ -30,6 +34,7 @@ const global = {
             sceneText.innerHTML = scene.overgaardText;
         }
     },
+    /** Displays scene base text */
     back() {
         sceneText.innerHTML = scene.text;
     },
